@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Simple login</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#simple_click").click(function(){
+                    var user=$("#user").val();
+                    var pass=$("#password").val();
+                    console.log(user);
+                    $.post("http://localhost:3000/", {user: user, password: password}, function(data){
+                        if(data==='done')
+                        {
+                            alert("login sucess");
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Hello people</h1>
+        <input type="TEXT" id="user" size="40"><br>
+        <input type="password" id="password" size-"40"><br>
+        <input type="button" name=-"simple_click=" value="Submit">
+
+    </body>
+</html>
